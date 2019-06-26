@@ -2,19 +2,22 @@
   <div id="app">
     <img class="logo" src="./assets/logo.png">
     <!-- <login></login> -->
-    <register></register>
+    <!-- <register></register> -->
+    <stories></stories>
   </div>
 </template>
 
 <script>
 // import Login from './components/Login'
-import Register from './components/Register'
+// import Register from './components/Register'
+import Stories from './components/Stories'
 
 export default {
   name: 'App',
   components: {
     // Login
-    Register
+    // Register,
+    Stories
   }
 }
 </script>
