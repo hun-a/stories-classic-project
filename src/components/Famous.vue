@@ -1,0 +1,51 @@
+<template>
+  <div id="famous">
+    <h2>Trending stories<string>({{ famous.length }})</string></h2>
+    <ul class="list-group">
+      <li v-for="story in famous" class="list-group-item">
+        {{ story.writer }} said "{{ story.plot }}"
+        Story upvotes {{ story.upvotes }}.
+      </li>
+    </ul>
+  </div>
+</template>
+
+<script>
+export default {
+  computed: {
+    famous () {
+      return this.stories.filter(item => item.upvotes > 50)
+    }
+  },
+  data () {
+    return {
+      stories: [
+        {
+          plot: 'My horse is amazing.',
+          writer: 'Mr. Weebl',
+          upvotes: 28,
+          voted: false
+        },
+        {
+          plot: 'Narwhals invented Shish Kebab.',
+          writer: 'Mr. Weebl',
+          upvotes: 8,
+          voted: false
+        },
+        {
+          plot: 'The dark size of the Force is stronger.',
+          writer: 'Darth Vader',
+          upvotes: 52,
+          voted: false
+        },
+        {
+          plot: 'One does not simply walk into Mordor',
+          writer: 'Boromir',
+          upvotes: 74,
+          voted: false
+        }
+      ]
+    }
+  }
+}
+</script>
