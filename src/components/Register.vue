@@ -6,8 +6,9 @@
     <input placeholder="Email address" class="form-control">
     <input placeholder="Pick a password" class="form-control">
     <input placeholder="Confirm password" class="form-control">
-    <button class="btn btn-primary">Sign up</button>
+    <button class="btn btn-primary btn-block">Sign up</button>
 
+    <hr>
     <famous></famous>
   </div>
 </template>

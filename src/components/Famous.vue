@@ -1,6 +1,6 @@
 <template>
   <div id="famous">
-    <h2>Trending stories<string>({{ famous.length }})</string></h2>
+    <h2>Trending stories<strong>({{ famous.length }})</strong></h2>
     <ul class="list-group">
       <li v-for="story in famous" class="list-group-item">
         {{ story.writer }} said "{{ story.plot }}"
