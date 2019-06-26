@@ -1,19 +1,16 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
-    <hello></hello>
     <login></login>
   </div>
 </template>
 
 <script>
-import Hello from './components/HelloWorld'
 import Login from './components/Login'
 
 export default {
   name: 'App',
   components: {
-    Hello,
     Login
   }
 }
