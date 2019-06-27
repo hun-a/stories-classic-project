@@ -2,52 +2,19 @@
   <div id="app">
     <div class="container">
       <img class="logo" src="./assets/logo.png">
-      <h1>Welcome to dynamic Components!</h1>
-      <ul class="nav nav-tabs">
-        <li v-for="page in pages" :key="page" class="nav-item">
-          <a @click="setPage(page)" href="#" class="nav-link" :class="isActivePage(page) ? 'active' : ''">{{ page | capitalize }}</a>
-        </li>
-      </ul>
-      <component :is="activePage"></component>
+      <h1>Welcome to Routing!</h1>
+      <router-link :to="{ name: 'home' }" exact>Home</router-link>
+      <router-link :to="{ name: 'login' }">Login</router-link>
+      <router-link :to="{ name: 'register' }">Register</router-link>
+      <router-link :to="{ name: 'stories.all' }">Stories</router-link>
+      <router-view></router-view>
     </div>
   </div>
 </template>
 
 <script>
-import Vue from 'vue'
-import Login from './components/Login'
-import Register from './components/Register'
-import Stories from './components/Stories'
-
-Vue.filter('capitalize', value => {
-  return value.charAt(0).toUpperCase() + value.substr(1)
-})
-
 export default {
-  name: 'App',
-  components: {
-    Login,
-    Register,
-    Stories
-  },
-  data () {
-    return {
-      pages: [
-        'login',
-        'stories',
-        'register'
-      ],
-      activePage: 'login'
-    }
-  },
-  methods: {
-    setPage (page) {
-      this.activePage = page
-    },
-    isActivePage (page) {
-      return this.activePage === page
-    }
-  }
+  name: 'App'
 }
 </script>
 
@@ -74,5 +41,9 @@ body {
 .logo {
   width: 100px;
   height: 100px
+}
+
+.router-link-active {
+  color: green;
 }
 </style>
