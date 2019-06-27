@@ -7,7 +7,9 @@
       <router-link :to="{ name: 'login' }">Login</router-link>
       <router-link :to="{ name: 'register' }">Register</router-link>
       <router-link :to="{ name: 'stories.all' }">Stories</router-link>
-      <router-view></router-view>
+      <transition name="fade">
+        <router-view></router-view>
+      </transition>
     </div>
   </div>
 </template>
@@ -45,5 +47,17 @@ body {
 
 .router-link-active {
   color: green;
+}
+
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  transition: opacity 1s;
+}
+
+.fade-enter-to {
+  opacity: 0.8;
 }
 </style>
