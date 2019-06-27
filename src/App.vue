@@ -2,8 +2,8 @@
   <div id="app">
     <img class="logo" src="./assets/logo.png">
     <!-- <login></login> -->
-    <register :stories="stories"></register>
-    <!-- <stories :stories="stories"></stories> -->
+    <register></register>
+    <!-- <stories></stories> -->
   </div>
 </template>
 
@@ -18,40 +18,6 @@ export default {
     // Login
     Register
     // Stories
-  },
-  data () {
-    return {
-      stories: [
-        {
-          id: 1,
-          plot: 'My horse is amazing.',
-          writer: 'Mr. Weebl',
-          upvotes: 28,
-          voted: false
-        },
-        {
-          id: 2,
-          plot: 'Narwhals invented Shish Kebab.',
-          writer: 'Mr. Weebl',
-          upvotes: 8,
-          voted: false
-        },
-        {
-          id: 3,
-          plot: 'The dark size of the Force is stronger.',
-          writer: 'Darth Vader',
-          upvotes: 52,
-          voted: false
-        },
-        {
-          id: 4,
-          plot: 'One does not simply walk into Mordor',
-          writer: 'Boromir',
-          upvotes: 74,
-          voted: false
-        }
-      ]
-    }
   }
 }
 </script>

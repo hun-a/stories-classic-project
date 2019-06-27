@@ -11,11 +11,12 @@
 </template>
 
 <script>
+import { store } from '../store'
+
 export default {
-  props: ['stories'],
   computed: {
     famous () {
-      return this.stories.filter(item => item.upvotes > 50)
+      return store.stories.filter(item => item.upvotes > 50)
     }
   }
 }

@@ -11,7 +11,13 @@
 </template>
 
 <script>
+import { store } from '../store'
+
 export default {
-  props: ['stories']
+  data () {
+    return {
+      stories: store.stories
+    }
+  }
 }
 </script>
