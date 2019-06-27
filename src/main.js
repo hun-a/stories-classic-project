@@ -9,6 +9,7 @@ import StoriesPage from './components/StoriesPage'
 import Register from './components/Register'
 import StoriesAll from './components/StoriesAll'
 import StoriesFamous from './components/famous'
+import StoriesEdit from './components/StoriesEdit'
 
 Vue.config.productionTip = false
 
@@ -43,6 +44,12 @@ const routes = [
         path: 'famous',
         name: 'stories.famous',
         component: StoriesFamous
+      },
+      {
+        path: ':id/edit',
+        name: 'stories.edit',
+        props: route => ({ id: Number(route.params.id) }),
+        component: StoriesEdit
       }
     ]
   }

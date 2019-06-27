@@ -4,7 +4,7 @@
     <ul class="list-group">
       <li v-for="story in famous" :key="story.id" class="list-group-item">
         {{ story.writer }} said "{{ story.plot }}"
-        Story upvotes {{ story.upvotes }}.
+        <span class="badge badge-info">{{ story.upvotes }}</span>
       </li>
     </ul>
   </div>
