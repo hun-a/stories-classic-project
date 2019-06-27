@@ -9,7 +9,7 @@
     <button class="btn btn-primary btn-block">Sign up</button>
 
     <hr>
-    <famous></famous>
+    <famous :stories="stories"></famous>
   </div>
 </template>
 
@@ -17,6 +17,7 @@
 import Famous from './Famous'
 
 export default {
+  props: ['stories'],
   components: {
     Famous
   },
