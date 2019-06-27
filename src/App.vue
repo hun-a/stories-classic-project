@@ -1,20 +1,27 @@
 <template>
   <div id="app">
-    <img class="logo" src="./assets/logo.png">
-    <component :is="currentComponent"></component>
-    <hr>
-    <div class="btn-group btn-block">
-      <button @click="currentComponent = 'login'" class="btn btn-success">Login</button>
-      <button @click="currentComponent = 'register'" class="btn btn-primary">Register</button>
-      <button @click="currentComponent = 'stories'" class="btn btn-info">Stories</button>
+    <div class="container">
+      <img class="logo" src="./assets/logo.png">
+      <h1>Welcome to dynamic Components!</h1>
+      <ul class="nav nav-tabs">
+        <li v-for="page in pages" :key="page" class="nav-item">
+          <a @click="setPage(page)" href="#" class="nav-link" :class="isActivePage(page) ? 'active' : ''">{{ page | capitalize }}</a>
+        </li>
+      </ul>
+      <component :is="activePage"></component>
     </div>
   </div>
 </template>
 
 <script>
+import Vue from 'vue'
 import Login from './components/Login'
 import Register from './components/Register'
 import Stories from './components/Stories'
+
+Vue.filter('capitalize', value => {
+  return value.charAt(0).toUpperCase() + value.substr(1)
+})
 
 export default {
   name: 'App',
@@ -25,7 +32,20 @@ export default {
   },
   data () {
     return {
-      currentComponent: 'login'
+      pages: [
+        'login',
+        'stories',
+        'register'
+      ],
+      activePage: 'login'
+    }
+  },
+  methods: {
+    setPage (page) {
+      this.activePage = page
+    },
+    isActivePage (page) {
+      return this.activePage === page
     }
   }
 }
@@ -49,11 +69,6 @@ body {
   max-width: 600px;
   font-family: Source Sans Pro, Helvetica, sans-serif;
   text-align: center;
-}
-
-#app a {
-  color: #42b983;
-  text-decoration: none;
 }
 
 .logo {
